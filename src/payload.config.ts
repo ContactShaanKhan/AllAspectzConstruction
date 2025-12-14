@@ -71,6 +71,10 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+  graphQL: {
+    // We don't need graphQL so we should disable it
+    disable: true
+  },
   jobs: {
     access: {
       run: ({ req }: { req: PayloadRequest }): boolean => {
