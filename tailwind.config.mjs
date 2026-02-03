@@ -92,6 +92,12 @@ const config = {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
+
+        // All aspectz theme colors
+        palLogoBlue: '#0C4783',
+        palLogoRed: '#DA0D12',
+        palDarkBlue: '#384B70',
+        palBlueLight: '#507687',
       },
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
