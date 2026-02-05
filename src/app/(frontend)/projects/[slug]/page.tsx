@@ -48,8 +48,10 @@ export default async function Post({ params: paramsPromise }: Args) {
   const decodedSlug = decodeURIComponent(slug)
   const url = '/projects/' + decodedSlug
   const post = await queryPostBySlug({ slug: decodedSlug })
+  const categories = post?.categories ?? [];
 
   if (!post) return <PayloadRedirects url={url} />
+
 
   return (
     <article className="pt-16 pb-16">
@@ -65,12 +67,30 @@ export default async function Post({ params: paramsPromise }: Args) {
       <div className="flex flex-col items-center gap-4 pt-8">
         <div className="container">
           <RichText className="max-w-[48rem] mx-auto" data={post.content} enableGutter={false} />
+          <div className='flex flex-wrap gap-2 mb-4'>
+            {
+              categories.map((category, index) => (
+                (typeof category === 'object' && category !== null) ?
+                  <span
+                    key={"ct" + index}
+                    className="bg-palBlueLight text-white py-1 px-2 rounded-lg text-sm"
+                  >
+                    {category.title}
+                  </span>
+                  // <span className='m-2 border'>{category.title}</span>
+                  : undefined
+              ))
+            }
+          </div>
           {post.relatedPosts && post.relatedPosts.length > 0 && (
-            <RelatedPosts
-              className="mt-12 max-w-[52rem] lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
-              relationTo='projects'
-              docs={post.relatedPosts.filter((post) => typeof post === 'object')}
-            />
+            <>
+              <h1>Related Posts</h1>
+              <RelatedPosts
+                className="mt-12 max-w-[52rem] lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
+                relationTo='projects'
+                docs={post.relatedPosts.filter((post) => typeof post === 'object')}
+              />
+            </>
           )}
         </div>
       </div>
