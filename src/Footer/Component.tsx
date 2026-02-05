@@ -38,7 +38,7 @@ export async function Footer() {
           {/* <ThemeSelector /> */}
           <nav className="flex flex-col md:flex-row gap-4">
             {navItems.map(({ link }, i) => {
-              return <CMSLink className="text-white" key={i} {...link} appearance={'admin'} />
+              return <CMSLink className="text-white" key={i} {...link} appearance={link.label.toLocaleLowerCase() === 'admin' ? 'admin' : 'default'} />
             })}
           </nav>
         </div>
