@@ -73,7 +73,7 @@ export default buildConfig({
   },
   graphQL: {
     // We don't need graphQL so we should disable it
-    disable: true
+    disable: true,
   },
   jobs: {
     access: {

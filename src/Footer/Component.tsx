@@ -34,6 +34,7 @@ export async function Footer() {
             . All Rights Reserved.
           </span>
         </div>
+        <span className="text-sm flex items-center justify-center">{process.env.PHONE_NUMBER}</span>
         <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">
           {/* <ThemeSelector /> */}
           <nav className="flex flex-col md:flex-row gap-4">
