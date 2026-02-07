@@ -1,6 +1,7 @@
-# All Aspectz Construction
+<img width="4000" height="1662" alt="logo-transparent" src="https://github.com/user-attachments/assets/dbabdfcc-19c6-42db-90d7-ea6d5a9e5996" />
 
-The official All Aspectz Construction website.
+
+The official **All Aspectz Construction** website.
 
 ## Setting up the Devlopment Environment
 
