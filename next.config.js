@@ -20,6 +20,9 @@ const nextConfig = {
       }),
     ],
   },
+  images: {
+    unoptimized: true,
+  },
   output: 'standalone',
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
